@@ -55,3 +55,31 @@ temp = temp -> next;
 }
 return head;
 }
+    
+    
+
+
+
+
+void sort(Node** head){
+    Node* temp=*head;
+    if(temp==NULL || temp->next==NULL){
+        return ;
+    }
+    Node* a=NULL;
+    Node* b=NULL;
+    
+    split(temp,&a,&b);
+    
+    sort(&a);
+    sort(&b);
+    
+    *head=join(a,b);
+    
+}
+
+struct Node *sortDoubly(struct Node *head)
+{
+	sort(&head);
+	return head;
+}
